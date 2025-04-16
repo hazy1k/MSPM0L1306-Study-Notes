@@ -760,7 +760,7 @@ I (..\Source\ti\driverlib\dl_common.h)(0x65B1D8C1)
 F (.\startup_mspm0l130x_uvision.s)(0x66DA98BB)(--target=arm-arm-none-eabi -mcpu=cortex-m0plus -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-Wa,armasm,--pd,"__UVISION_VERSION SETA 538" -Wa,armasm,--pd,"__MSPM0L1306__ SETA 1"-o ../output/startup_mspm0l130x_uvision.o)
 F (..\User\LED\LED.c)(0x67FCD229)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -Wno-covered-switch-default -Wno-unreachable-code-break -I ../Source -I ../Source/third_party/CMSIS/Core/Include -I ../Project -I ../User -I ../User/LED-D__UVISION_VERSION="538" -D__MSPM0L1306__ -D__MSPM0L1306__-o ../output/led.o -MD)
 I (..\User\LED\LED.h)(0x67D2DA38)
-I (..\User\ti_msp_dl_config.h)(0x67D2D7D4)
+I (..\User\ti_msp_dl_config.h)(0x67FF78A7)
 I (..\Source\ti\devices\msp\msp.h)(0x65B1D8C1)
 I (..\Source\ti\devices\DeviceFamily.h)(0x65B1D8C1)
 I (..\Source\ti\devices\msp\m0p\mspm0l130x.h)(0x65B1D8C1)
@@ -835,8 +835,8 @@ I (..\Source\ti\driverlib\dl_vref.h)(0x65B1D8C1)
 I (..\Source\ti\driverlib\dl_wwdt.h)(0x65B1D8C1)
 I (..\Source\ti\driverlib\m0p\dl_interrupt.h)(0x65B1D8C1)
 I (..\Source\ti\driverlib\m0p\dl_systick.h)(0x65B1D8C1)
-F (..\User\main.c)(0x67D2DC1B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -Wno-covered-switch-default -Wno-unreachable-code-break -I ../Source -I ../Source/third_party/CMSIS/Core/Include -I ../Project -I ../User -I ../User/LED-D__UVISION_VERSION="538" -D__MSPM0L1306__ -D__MSPM0L1306__-o ../output/main.o -MD)
-I (..\User\ti_msp_dl_config.h)(0x67D2D7D4)
+F (..\User\main.c)(0x67FCE62A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -Wno-covered-switch-default -Wno-unreachable-code-break -I ../Source -I ../Source/third_party/CMSIS/Core/Include -I ../Project -I ../User -I ../User/LED-D__UVISION_VERSION="538" -D__MSPM0L1306__ -D__MSPM0L1306__-o ../output/main.o -MD)
+I (..\User\ti_msp_dl_config.h)(0x67FF78A7)
 I (..\Source\ti\devices\msp\msp.h)(0x65B1D8C1)
 I (..\Source\ti\devices\DeviceFamily.h)(0x65B1D8C1)
 I (..\Source\ti\devices\msp\m0p\mspm0l130x.h)(0x65B1D8C1)
@@ -913,7 +913,7 @@ I (..\Source\ti\driverlib\m0p\dl_interrupt.h)(0x65B1D8C1)
 I (..\Source\ti\driverlib\m0p\dl_systick.h)(0x65B1D8C1)
 I (..\User\LED\LED.h)(0x67D2DA38)
 F (..\User\ti_msp_dl_config.c)(0x67D2D7D4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O2 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -Wno-covered-switch-default -Wno-unreachable-code-break -I ../Source -I ../Source/third_party/CMSIS/Core/Include -I ../Project -I ../User -I ../User/LED-D__UVISION_VERSION="538" -D__MSPM0L1306__ -D__MSPM0L1306__-o ../output/ti_msp_dl_config.o -MD)
-I (..\User\ti_msp_dl_config.h)(0x67D2D7D4)
+I (..\User\ti_msp_dl_config.h)(0x67FF78A7)
 I (..\Source\ti\devices\msp\msp.h)(0x65B1D8C1)
 I (..\Source\ti\devices\DeviceFamily.h)(0x65B1D8C1)
 I (..\Source\ti\devices\msp\m0p\mspm0l130x.h)(0x65B1D8C1)
