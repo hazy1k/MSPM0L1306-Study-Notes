@@ -2,8 +2,6 @@
 
 ## 1. 硬件设计
 
-
-
 ## 2. 软件设计
 
 ### 2.1 编程大纲
@@ -70,13 +68,10 @@ void GROUP1_IRQHandler(void)
 
 int main(void)
 {
-	SYSCFG_DL_init();	
-	LED_Init();
-	Key_Init();
-	NVIC_EnableIRQ(KEY_INT_IRQN); // Enable KEY interrupt
-	while(1);
+    SYSCFG_DL_init();    
+    LED_Init();
+    Key_Init();
+    NVIC_EnableIRQ(KEY_INT_IRQN); // Enable KEY interrupt
+    while(1);
 }
-
 ```
-
-
