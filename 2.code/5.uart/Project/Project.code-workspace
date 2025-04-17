@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.m": "matlab",
+            "led.h": "c",
+            "systick.h": "c",
+            "uart.h": "c"
+        }
+    },
+    "extensions": {}
+}
