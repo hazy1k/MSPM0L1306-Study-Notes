@@ -1,4 +1,4 @@
-# 第六章 uart-串口通信
+# 第六章 UART-串口通信
 
 ## 1. 硬件设计
 
@@ -66,7 +66,7 @@ static const DL_UART_Main_Config gUART_0Config = {
 };
 void SYSCFG_DL_UART_0_init(void)
 {
-    
+
     DL_GPIO_initPeripheralOutputFunction(GPIO_UART_0_IOMUX_TX, GPIO_UART_0_IOMUX_TX_FUNC);
     DL_GPIO_initPeripheralInputFunction(GPIO_UART_0_IOMUX_RX, GPIO_UART_0_IOMUX_RX_FUNC);
     DL_UART_Main_setClockConfig(UART_0_INST, (DL_UART_Main_ClockConfig *) &gUART_0ClockConfig);
@@ -91,19 +91,19 @@ void SYSCFG_DL_UART_0_init(void)
 // 串口发送单个字节
 void uart0_send_char(char ch)
 {
-	while( DL_UART_isBusy(UART_0_INST) == true );
-	DL_UART_Main_transmitData(UART_0_INST, ch);
+    while( DL_UART_isBusy(UART_0_INST) == true );
+    DL_UART_Main_transmitData(UART_0_INST, ch);
 
 }
 
 // 串口发送字符串
 void uart0_send_string(char* str)
 {
-	
-	while(*str!=0&&str!=0)
-	{
-		uart0_send_char(*str++);
-	}
+
+    while(*str!=0&&str!=0)
+    {
+        uart0_send_char(*str++);
+    }
 }
 
 // 兼容性相关
@@ -124,9 +124,9 @@ void _sys_exit(int x)
 // 重定向printf
 int fputc(int ch, FILE *stream)
 {
-	while( DL_UART_isBusy(UART_0_INST) == true);
-	DL_UART_Main_transmitData(UART_0_INST, ch);
-	return ch;
+    while( DL_UART_isBusy(UART_0_INST) == true);
+    DL_UART_Main_transmitData(UART_0_INST, ch);
+    return ch;
 }
 ```
 
@@ -136,18 +136,17 @@ int fputc(int ch, FILE *stream)
 // 串口中断服务函数
 void UART_0_INST_IRQHandler(void)
 {
-	switch( DL_UART_getPendingInterrupt(UART_0_INST) )
-	{
-		case DL_UART_IIDX_RX:
-			uart_data = DL_UART_Main_receiveData(UART_0_INST);
-			uart0_send_char(uart_data);
-			break;
-		
-		default:
-			break;
-	}
-}
+    switch( DL_UART_getPendingInterrupt(UART_0_INST) )
+    {
+        case DL_UART_IIDX_RX:
+            uart_data = DL_UART_Main_receiveData(UART_0_INST);
+            uart0_send_char(uart_data);
+            break;
 
+        default:
+            break;
+    }
+}
 ```
 
 #### 2.2.5 主函数测试
@@ -161,23 +160,20 @@ void UART_0_INST_IRQHandler(void)
 
 int main(void)
 {
-	SYSCFG_DL_init();
-	LED_Init();
-	SysTick_init();
-	SYSCFG_DL_UART_0_init();
-	NVIC_ClearPendingIRQ(UART_0_INST_INT_IRQN);
-	NVIC_EnableIRQ(UART_0_INST_INT_IRQN);
-	while (1) 
-	{			
-		LED_ON();
-		printf("LED ON\r\n");
-		delay_ms(1000);
-		LED_OFF();
-		printf("LED OFF\r\n");
-		delay_ms(1000);
-	}
+    SYSCFG_DL_init();
+    LED_Init();
+    SysTick_init();
+    SYSCFG_DL_UART_0_init();
+    NVIC_ClearPendingIRQ(UART_0_INST_INT_IRQN);
+    NVIC_EnableIRQ(UART_0_INST_INT_IRQN);
+    while (1) 
+    {            
+        LED_ON();
+        printf("LED ON\r\n");
+        delay_ms(1000);
+        LED_OFF();
+        printf("LED OFF\r\n");
+        delay_ms(1000);
+    }
 }
-
 ```
-
-
