@@ -78,15 +78,15 @@ void ADC_VOLTAGE_init(void)
 // ADC中断服务函数
 void ADC_VOLTAGE_INST_IRQHandler(void)
 {
-	switch (DL_ADC12_getPendingInterrupt(ADC_VOLTAGE_INST)) 
-	{
+    switch (DL_ADC12_getPendingInterrupt(ADC_VOLTAGE_INST)) 
+    {
 
-		case DL_ADC12_IIDX_MEM0_RESULT_LOADED:
-			gCheckADC = true;
-			break;
-		default:
-			break;
-	}
+        case DL_ADC12_IIDX_MEM0_RESULT_LOADED:
+            gCheckADC = true;
+            break;
+        default:
+            break;
+    }
 }
 ```
 
@@ -96,15 +96,15 @@ void ADC_VOLTAGE_INST_IRQHandler(void)
 // 读取ADC采集的数据
 uint32_t adc_getValue(void)
 {
-	uint32_t adc_result = 0;
-	DL_ADC12_startConversion(ADC_VOLTAGE_INST);
-	while(gCheckADC == false)
-	{
-		__WFE();
-	}
-	adc_result = DL_ADC12_getMemResult(ADC_VOLTAGE_INST, ADC_VOLTAGE_ADCMEM_ADC_CH0); // PA27
-	gCheckADC = false; // 清除标志位
-	return adc_result;
+    uint32_t adc_result = 0;
+    DL_ADC12_startConversion(ADC_VOLTAGE_INST);
+    while(gCheckADC == false)
+    {
+        __WFE();
+    }
+    adc_result = DL_ADC12_getMemResult(ADC_VOLTAGE_INST, ADC_VOLTAGE_ADCMEM_ADC_CH0); // PA27
+    gCheckADC = false; // 清除标志位
+    return adc_result;
 }
 ```
 
